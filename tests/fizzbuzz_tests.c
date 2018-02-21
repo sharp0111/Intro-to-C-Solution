@@ -1,6 +1,5 @@
 #include <../tests/minunit.h>
 #include <fizzbuzz/fizzbuzz.h>
-#include <assert.h>
 
 char *test_fizzbuzz()
 {
