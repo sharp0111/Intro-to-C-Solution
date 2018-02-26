@@ -1,33 +1,28 @@
 #include <../tests/minunit.h>
+#include <../tests/utils/utils.h>
 #include <quicksort/quicksort.h>
-
-char *test_swap()
-{
-    int ints_short[] = { 4, 9 };
-    swap(ints_short, 0, 1);
-    mu_assert((ints_short[0] == 9 && ints_short[1] == 4), "Your swap function did not swap values correctly");
-
-    int ints_long[] = { 1, 9, 2, 8, 3, 7, 6, 4, 5 };
-    swap(ints_long, 0, 8);
-    swap(ints_long, 3, 4);
-    mu_assert((ints_long[0] == 5 && ints_long[8] == 1), "Your swap function did not swap values correctly");
-    mu_assert((ints_long[3] == 3 && ints_long[4] == 8), "Your swap function did not swap values correctly");
-
-    mu_assert((ints_long[5] == 7 && ints_long[6] == 6), "Your swap function swapped values it shouldn't have");
-
-    return NULL;
-}
 
 char *test_quicksort()
 {
+    int single_int[] = { 100 };
+    int expected1[] = { 100 };
+    quicksort(single_int, 0, 0);
+    mu_assert(check_arrays(single_int, expected1, 1, 1), "Your quicksort implementation failed on an array with a single element");
 
+    int arr1[] = {100, 55, 4, 98, 10, 18, 90, 95, 43, 11, 47, 67, 89, 42, 49, 79};
+    int expected2[] = {4, 10, 11, 18, 42, 43, 47, 49, 55, 67, 79, 89, 90, 95, 98, 100};
+    int n = sizeof(arr1) / sizeof(arr1[0]);
+    int m = sizeof(expected2) / sizeof(expected2[0]);
+    quicksort(arr1, 0, n-1);
+    mu_assert(check_arrays(arr1, expected2, n, m) == 1, "Your quicksort implementation did not return the expected output.");
+
+    return NULL;
 }
 
 char *all_tests()
 {
     mu_suite_start();
 
-    mu_run_test(test_swap);
     mu_run_test(test_quicksort);
 
     return NULL;

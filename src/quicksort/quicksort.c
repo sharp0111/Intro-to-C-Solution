@@ -1,30 +1,27 @@
 #include <stdlib.h>
+#include <pointers/pointers.h>
 
-void swap(int v[], int i, int j)
+int partition(int arr[], int low, int high)
 {
-    int temp;
-
-    temp = v[i];
-    v[i] = v[j];
-    v[j] = temp;
+  int pivot = arr[high];
+  int i = low - 1;
+  
+  for (int j = low; j <= high - 1; j++) {
+    if (arr[j] <= pivot) {
+      i++;
+      swap(&arr[i], &arr[j]);
+    }
+  }
+  
+  swap(&arr[i+1], &arr[high]);
+  return i + 1;
 }
 
-void quicksort(int values[], int left, int right)
+void quicksort(int arr[], int low, int high)
 {
-    int i, last;
-
-    if (left >= right) return;
-    swap(values, left, (left + right) / 2);
-    last = left;
-
-    for (i = left+1; i <= right; i++) {
-        if (values[i] < values[left]) {
-            swap(values, ++last, i);
-        }
-    }
-
-    swap(values, left, last);
-
-    quicksort(values, left, last-1);
-    quicksort(values, last+1, right);
+  if (low < high) {
+    int index = partition(arr, low, high);
+    quicksort(arr, low, index - 1);
+    quicksort(arr, index + 1, high);
+  }
 }
