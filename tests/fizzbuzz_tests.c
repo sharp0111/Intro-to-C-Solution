@@ -3,10 +3,10 @@
 
 char *test_fizzbuzz()
 {
-    mu_assert(fizzbuzz(3) == 2, "Your fizzbuzz function did not return 2 for n = 3");
-    mu_assert(fizzbuzz(5) == 3, "Your fizzbuzz function did not return 3 for n = 5");
-    mu_assert(fizzbuzz(10) == 5, "Your fizzbuzz function did not return 5 for n = 10");
-    mu_assert(fizzbuzz(100) == 53, "Your fizzbuzz function did not return 53 for n = 100");
+    mu_assert(fizzbuzz(3) == 2, "Your fizzbuzz function did not return 2 for n = 3.");
+    mu_assert(fizzbuzz(5) == 3, "Your fizzbuzz function did not return 3 for n = 5.");
+    mu_assert(fizzbuzz(10) == 5, "Your fizzbuzz function did not return 5 for n = 10.");
+    mu_assert(fizzbuzz(100) == 53, "Your fizzbuzz function did not return 53 for n = 100.");
 
     return NULL;
 }
