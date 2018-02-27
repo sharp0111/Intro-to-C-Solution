@@ -7,7 +7,7 @@ char *test_quicksort()
     int single_int[] = { 100 };
     int expected1[] = { 100 };
     quicksort(single_int, 0, 0);
-    mu_assert(check_arrays(single_int, expected1, 1, 1), "Your quicksort implementation failed on an array with a single element");
+    mu_assert(check_arrays(single_int, expected1, 1, 1), "Your quicksort implementation failed on an array with a single element.");
 
     int arr1[] = {100, 55, 4, 98, 10, 18, 90, 95, 43, 11, 47, 67, 89, 42, 49, 79};
     int expected2[] = {4, 10, 11, 18, 42, 43, 47, 49, 55, 67, 79, 89, 90, 95, 98, 100};
