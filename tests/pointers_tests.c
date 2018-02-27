@@ -31,12 +31,39 @@ char *test_string_length()
     return NULL;
 }
 
+char *test_string_copy()
+{
+    char *string = "hello, world";
+    char empty[20];
+
+    string_copy(empty, string);
+    mu_assert(check_strings(empty, string) == 0, "Your string_copy did not correctly copy the given string.");
+
+    return NULL;
+}
+
+char *test_string_compare()
+{
+    char *s = "hello, world";
+    char *t = "hiya";
+    char *m = "goodbye";
+    char *n = "see ya";
+
+    mu_assert(string_compare(s, s) == 0, "Your string_compare did not return 0 for matching strings.");
+    mu_assert(string_compare(s, t) < 0, "Your string_compare did not return a negative value where it was expected.");
+    mu_assert(string_compare(n, m) > 0, "Your string_compare did not return a positive value where it was expected.");
+
+    return NULL;
+}
+
 char *all_tests()
 {
     mu_suite_start();
 
     mu_run_test(test_swap);
     mu_run_test(test_string_length);
+    mu_run_test(test_string_copy);
+    mu_run_test(test_string_compare);
 
     return NULL;
 }

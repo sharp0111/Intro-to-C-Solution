@@ -12,3 +12,13 @@ int check_arrays(int input[], int expected[], int n, int m)
 
     return 1;
 }
+
+int check_strings(char *input, char *expected)
+{
+    for ( ; *input == *expected; input++, expected++) {
+        if (*input == '\0') {
+            return 0;
+        }
+    }
+    return *input - *expected;
+}
