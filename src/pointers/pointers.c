@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 /*
-    Swaps the integer values being pointed at by a and b
+    Swaps the integer values being pointed at by a and b.
 */
 void swap(int* a, int* b)
 {
@@ -12,7 +12,7 @@ void swap(int* a, int* b)
 
 /*
     Given a character pointer s, returns the number of characters
-    it is pointing to
+    it is pointing to.
 */
 int string_length(char *s)
 {
@@ -28,24 +28,23 @@ int string_length(char *s)
 
 /*
     Given an empty (NULL) character pointer x and a character pointer y,
-    copies the character contents of y over to x
+    copies the character contents of y over to x.
 */
-// void string_copy(char *x, char *y)
-// {
-//     while ((*x = *y) != '\0') {
-//         x++;
-//         y++;
-//     }
-// }
+void string_copy(char *x, char *y)
+{
+    while ((*x = *y) != '\0') {
+        x++;
+        y++;
+    }
+}
 
-/* More streamlined versions of string_copy*/
+/* More streamlined versions of string_copy
 
 void string_copy(char *x, char *y)
 {
     while ((*x++ = *y++) != '\0')
         ;
 }
-/*
 
 void string_copy(char *x, char *y)
 {
@@ -57,7 +56,7 @@ void string_copy(char *x, char *y)
 /* 
     Compares the character strings m and n and returns negative,
     0, or positive if n is lexicographically less than, equal to,
-    or greater than n
+    or greater than n.
 */
 int string_compare(char *m, char *n)
 {

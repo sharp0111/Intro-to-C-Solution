@@ -21,6 +21,7 @@ char *string_dup(char *src)
     while (*src) {
         *p++ = *src++;
     }
+    
     *p = '\0';
     return str;
 }

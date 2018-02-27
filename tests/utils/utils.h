@@ -1,3 +1,6 @@
+#ifndef utils_h
+#define utils_h
+
 int check_arrays(int input[], int expected[], int n, int m)
 {
     if (n != m) {
@@ -22,3 +25,5 @@ int check_strings(char *input, char *expected)
     }
     return *input - *expected;
 }
+
+#endif
