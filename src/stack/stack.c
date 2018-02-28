@@ -3,7 +3,7 @@
 
 struct Stack {
     int top;
-    unsigned capacity;
+    int capacity;
     int *storage;
 };
 
@@ -13,7 +13,7 @@ struct Stack {
     struct. Also allocates memory for the Stack's storage structure. 
     Stack->top should be initializes to -1.
 */
-struct Stack *Stack_create(unsigned capacity)
+struct Stack *Stack_create(int capacity)
 {
     struct Stack *stack = (struct Stack*) malloc(sizeof(struct Stack));
     stack->capacity = capacity;
