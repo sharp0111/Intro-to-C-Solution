@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <string.h>
+#include <malloc/malloc.h> 
 #include <callbacks/callbacks.h>
 
 /*
@@ -29,7 +29,7 @@ int *bubble_sort(int *numbers, int n, compare_cb cmp)
     int temp;
     int *target = malloc(n * sizeof(int));
     
-    memcpy(target, numbers, n * sizeof(int));
+    mem_copy(target, numbers, n * sizeof(int));
 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n - 1; j++) {
