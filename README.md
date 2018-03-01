@@ -1,3 +1,25 @@
+# Introduction to the C Programming Language
+
+Welcome to your first C lab! If it hasn't been made clear to you yet, C is a _hard_ language to learn, especially if you're coming from a language like JavaScript or Python. Again, the main reason for this is because C has you working directly with the memory on your machine. Higher level languages abstract this fact away from you. Essentially, you're getting exposed to the nitty-gritty seedy underbelly of your computer's inner workings, and being in such a place for extended periods of time is not for everybody. 
+
+That being said, we the instructors do believe that every developer needs to get a taste of C in order to really be able to delve into the inner workings of how exactly software communicates and interfaces with hardware. That's not really something JavaScript or Python will expose to you.
+
+So without further ado, let's get started!
+
+## What you'll be doing in this lab
+
+This lab is structured very much like how your introductory JavaScript labs are structured. There are independent modules, each with their own set of exercises that you'll be tasked with implementing. There's an associated set of tests for all the exercises in each module, which you'll run against your code to check to see if it behaves and functions correctly. The order in which you should tackle these exercises is this:
+
+    -[] fizzbuzz
+    -[] pointers
+    -[] quicksort
+    -[] malloc
+    -[] structs
+    -[] stack
+    -[] callbacks
+
+
+
 # Basic Functions in C
 
 Functions in C are not much different from functions in JavaScript. Probably the most notable difference, at least from a syntactic point of view, is that you need to specify types on all your input parameters, along with needing to specify the return type of the function. Remember, C is a _strongly_ typed language, as opposed to JavaScript which is a _loosely_ typed language where types are entirely inferred by the interpreter. The C compiler ensures that you specify your types and that your code is consistent with the types you specify. 
