@@ -23,6 +23,7 @@ int check_strings(char *input, char *expected)
             return 0;
         }
     }
+    
     return *input - *expected;
 }
 
