@@ -12,7 +12,7 @@ Let's look at a simple struct definition:
         char *breed;
         char *color;
         int age;
-    }
+    };
 ```
 This declares the shape of the Cat struct. Now we'll need to create an instance of it if we want to want to actually use it. Well, what actually defines an instance of something?
 
@@ -37,7 +37,7 @@ Basically, you can think of it like this:
 
 Allocating memory for structs is one of the most important functions that `malloc` serves. Keep in mind though that when we declare a struct, every type in the struct needs to have a known size. Looking at the Cat struct, `char *`s and `int`s all have a known size, so the entire size of the struct can be calculated. However, we don't know the sizes of the data that the `char *`s may be pointing to. 
 
-Let's say we have function then called `name_cat` that will assign a Cat instance with a given input name. It might look like this:
+Let's say we have a function called `name_cat` that will assign a Cat instance with a given input name. It might look like this:
 ```c
     void name_cat(struct Cat *cat, char *name)
     {
@@ -66,3 +66,20 @@ A couple of common errors that arise when it comes to `free`ing memory are:
 1. Forgetting to call `free` on some `malloc`'d piece of memory. This is a problem because that memory doesn't get cleaned up, and you end up with what's called a 'memory leak'. A single memory leak isn't the end of the world, but if you continually forget to `free` your memory, they'll start to pile up and waste precious memory resources that could be used by other programs that actually need that memory. 
 2. Calling `free` on a pointer to memory that has already been `free`'d. This is called a 'double free', and it should be avoided because it may corrupt the state of the memory manager (which is what keeps track of all of the pieces of memory that have been handed out so far), which might cause existing blocks of memory to get corrupted or for future allocations to fail in bizarre ways (for example, the same memory getting handed out on two different successive calls of malloc).
 
+Going back to our Cat struct, we might want to have a `Cat_destroy` function that will handle the cleaning up of a Cat instance for us. It'll free all the memory that was allocated during the Cat instance's lifetime.
+```c
+    void Cat_destroy(struct Cat *cat)
+    {
+        if (cat->name != NULL) {
+            free(cat->name);
+        }
+
+        if (cat->breed != NULL) {
+            free(cat->breed);
+        }
+
+        if (cat != NULL) {
+            free(cat);
+        }
+    }
+```
