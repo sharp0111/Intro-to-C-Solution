@@ -56,7 +56,7 @@ Lastly, we have `ip = &z[0];`, which declaring that `ip` now points to the first
 
 ## Pointer Arithmetic
 
-When we index into arrays in JavaScript, we can do things like
+When we index into arrays in JavaScript, we can do things like:
 ```javascript
     const someArray = [];
 
@@ -66,7 +66,7 @@ When we index into arrays in JavaScript, we can do things like
 ```
 We can index into arrays by performing arithmetic on the index. With pointers in C, we can do the exact same thing!
 
-Let's say we have a pointer to a string like so
+Let's say we have a pointer to a string like so:
 ```c
     char *str = "Some string";
 ```

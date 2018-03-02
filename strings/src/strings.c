@@ -15,8 +15,8 @@ int string_length(char s[])
 
 /*
     Don't worry about this funky 'char *' going on here. We'll get to
-    shortly. In the meantime, write a function that allocates a new 
-    char array with the capacity given by the length of the input
+    that shortly. In the meantime, write a function that allocates a
+    new char array with the capacity given by the length of the input
     string and add the characters from the input string into the new
     array in reverse order. Return the new array.
 */
