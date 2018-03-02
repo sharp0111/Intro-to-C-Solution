@@ -33,3 +33,7 @@ Under the hood, this declaration becomes
     char[] = { 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!', '\0' };
 ```
 The `\0` character at the end represents the null character; _every_ C string is terminated with one of these, and in fact, if you wanted to write a function to find the number of characters in a string, you'd basically just loop through the character array and increment a counter until you found the `\0` character. 
+
+IMPORTANT NOTE: So far, every language you've worked in has not differentiated between single and double quotes. In C, these actually make a difference. Single quotes delineate a single character, while double quotes delineate string literals. So for example, `"a"` is a string literal complete with a terminating null character at the end of it, as opposed to `'a'` which is just the individual character. 
+
+The compiler _will_ yell at you if you try to store multiple characters in single quotes. 
