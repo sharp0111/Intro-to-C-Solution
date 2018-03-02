@@ -18,7 +18,7 @@ Here are some pretty typical `malloc` calls:
 ```
 The first `malloc` call allocates enough space for 100 ints. The `malloc` call initially returns a `void` pointer, but it then gets _cast_ to an `int` pointer on the left-hand side. You'll also note that we're using the `sizeof` operator in order to find the size of an individual integer, and then multiplying by the number of integers we're looking to store in order to get the total amount of memory we need. We have to do this because integers are not stored in a single byte, and integer sizes may fluctuate from platform to platform.
 
-With the second `malloc` call, you'll see we don't do that. We're still performing the cast to a `char` pointer, but there's not call to the `sizeof` operator. This is because `char`s each fit within a single byte, so 51 bytes will hold 51 chars, which is exactly what we want. 
+With the second `malloc` call, you'll see we don't do that. We're still performing the cast to a `char` pointer, but there's not call to the `sizeof` operator. This is because `char`s each fit within a single byte, so 51 bytes will hold 51 chars, which is exactly what we want. Once we have a pointer to the `malloc`'d memory, we can work with it exactly how we've been working with pointers. 
 
 So, we still need to know how much data we want to fit inside this chunk of `malloc`'d memory, which still isn't all that helpful since that's still a hefty limitation. There exist other library functions, such as `realloc`, which can receive a pointer to `malloc`d memory and then resize that chunk of memory, but for this module we're just going to stick with `malloc`. 
 
