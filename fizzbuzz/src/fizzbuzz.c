@@ -33,3 +33,12 @@ int fizzbuzz(int n)
 
     return count;
 }
+
+#ifndef TESTING
+int main(void)
+{
+    fizzbuzz(20);
+
+    return 0;
+}
+#endif
