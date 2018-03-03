@@ -26,16 +26,34 @@ int string_length(char s[])
 char *reverse_string(char s[])
 {
     int n = string_length(s);
-    char *rv = malloc(n+1); // +1 to make room for \0
+    char rv[n+1];
 
     for (int i = 0; i < n; i++) {
-        rv[i] = s[n - i - 1];
+        rv[i] = s[n-i-1];
     }
 
     rv[n] = '\0';
-
     return rv;
 }
+
+/* 
+    Better solution that utilizes malloc so the rv array persists
+    past this function's scope. However, the students haven't 
+    been exposed to `malloc` yet at this point.
+*/
+// char *reverse_string(char s[])
+// {
+//     int n = string_length(s);
+//     char *rv = malloc(n+1); // +1 to make room for \0
+
+//     for (int i = 0; i < n; i++) {
+//         rv[i] = s[n - i - 1];
+//     }
+
+//     rv[n] = '\0';
+
+//     return rv;
+//}
 
 #ifndef TESTING
 int main(void)
