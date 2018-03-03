@@ -1,5 +1,6 @@
+#include <stdio.h>
 #include <stdlib.h>
-#include "../malloc/malloc.h"
+#include "lib.h"
 
 /* 
     Define the Person struct by specifying the fields that make up the
@@ -43,3 +44,19 @@ void Person_destroy(struct Person *who)
     free(who->name);
     free(who);
 }
+
+#ifndef TESTING
+int main(void)
+{
+    struct Person *tony = Person_create("Tony Stark", 32, 64, 140);
+
+    printf("  Name: %s\n", tony->name);
+    printf("   Age: %d\n", tony->age);
+    printf("Height: %d\n", tony->height);
+    printf("Weight: %d\n", tony->weight);
+
+    Person_destroy(tony);
+
+    return 0;
+}
+#endif
