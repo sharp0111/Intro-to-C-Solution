@@ -6,7 +6,7 @@ Here is a non-comprehensive list of C data types: [https://www.le.ac.uk/users/rj
 
 To reiterate, you might declare a function in C like this:
 ```c
-    int functionThatReturnsInt(int param1, int param2)
+    int foo(int param1, int param2)
     {
         ...
         return 0;
@@ -16,7 +16,7 @@ This function signature states that it receives two integer parameters and retur
 
 Here's another example:
 ```c
-    void functionThatDoesNotReturnAnything(int[])
+    void bar(int[])
     {
         ...
     }
@@ -25,7 +25,7 @@ This function signature states that it receives a single integer array and doesn
 
 For printing output, you'll want to use the `printf` function, which is included in the `stdlib` library. 
 
-## Task 1
+## Implementing fizzbuzz
 
 Your first task is going to be writing good ol' fizzbuzz in C! Your `fizzbuzz` function should receive some integer n, then loop up till n, printing out "Fizz" if the current iteration i is divisible by 3, "Buzz" if it's divisible by 5, or "FizzBuzz" if it is divisible by both 3 and 5. Additionally, for each iteration where nothing is printed, your function should increment a counter and return the result of that counter at the end of its execution. 
 
