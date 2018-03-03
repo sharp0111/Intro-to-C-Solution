@@ -33,7 +33,7 @@ There are a few other such sorts of edge cases, but for the most part they're pr
 
 ## Declaring pointers 
 
-As showcased above, declaring a pointer is as simple as putting as asterisk after the type declaration of a variable. This signifies that we have a pointer to the declared type with the specified name. 
+As showcased above, declaring a pointer is as simple as putting an asterisk after the type declaration of a variable. This signifies that we have a pointer to the declared type with the specified name. 
 
 ```c
 /* Declaring two ints x and y, and an int array z */
@@ -60,7 +60,7 @@ When we index into arrays in JavaScript, we can do things like:
 ```javascript
     const someArray = [];
 
-    for (int i = 0; i < array.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         someArray[i] = array[i + 1];
     }
 ```
@@ -77,7 +77,7 @@ We can loop through the characters in this string by doing this:
         str++;
     }
 ```
-This loop will print out each character in the string. Indeed, this loop is pretty much analogous to iterating through array. More precisely though, on each iteration of this while loop, we're incrementing the spot the pointer points to by one. At the beginning of the loop, `*str` points to the first character in the string, `S`. Then, on the next iteration, it gets incremented and then prints out `o`. This keeps going until the pointer points to the null character, which terminates the loop. 
+This loop will print out each character in the string. Indeed, this loop is pretty much analogous to iterating through an array. More precisely though, on each iteration of this while loop, we're incrementing the spot the pointer points to by one. At the beginning of the loop, `*str` points to the first character in the string, `S`. Then, on the next iteration, it gets incremented and then prints out `o`. This keeps going until the pointer points to the null character, which terminates the loop. 
 
 Armed with this knowledge regarding pointers and pointer arithmetic, we can rewrite the `reverse_string` function from the last module to use pointers instead of allocating additional memory for the reversed string. This has the added benefit of performing the reverse in-place.
 ```c

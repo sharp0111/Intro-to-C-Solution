@@ -14,10 +14,14 @@ Another way we might declare an array is the following:
 ```
 With this, we've declared a statically-sized integer array that has space for 20 bytes worth of integers. There's nothing in it initially, but we can now start populating it with integers (and only integers) up to it's specified capacity. 
 ```c
-    for (int i = 0; i < 20; i++) {
+    int n = 20 / sizeof(int);
+
+    for (int i = 0; i < n; i++) {
         another_int_array[i] = i;
     }
 ```
+While we allocated 20 bytes worth of space into the array, keep in mind that a single integer actually takes up more than a single byte of space in memory. To get around this, we can use the `sizeof` operator to find out exactly how many bytes a single `int` occupies on your machine, and then divide the array capacity by that to get the actual number of integers that can fit inside the array.
+
 If we try to add more integers than the array has capacity for, we'll get a segmentation fault error, which means we've tried to access memory we don't have permission to access. That's what happens when we go outside of an array's bounds. 
 
 We'll talk later on about how to handle dynamically-sized data. 

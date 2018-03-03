@@ -32,6 +32,6 @@ Keep in mind though that this callback type is specifically a function pointer t
 
 For this module you'll be implementing a bubble sort function that accepts a callback. The callback will be the specifier of the order that the bubble sort should be sorting the input into. It's very much like JavaScript's `Array.sort` method that accepts a callback. This makes the sort function slightly more generic. 
 
-Take a look at `src/callbacks.h`. There you'll see the type declaration for the function pointer callback that you'll implement as part of this module. 
+Take a look at `callbacks.h`. There you'll see the type declaration for the function pointer callback that you'll implement as part of this module. 
 
-Inside of `src/callbacks.c`, you'll define the two functions that will be passed as callbacks to the `bubble_sort` function that you'll also implement as part of this module. 
+Inside of `callbacks.c`, you'll define the two functions that will be passed as callbacks to the `bubble_sort` function that you'll also implement as part of this module. 
