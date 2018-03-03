@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <callbacks.h>
-#include "../malloc/src/malloc.h"
-#include "../pointers/src/pointers.h" 
+#include "../malloc/malloc.h"
+#include "../pointers/pointers.h" 
 
 /*
     Implement the callback that will be passed to your bubble_sort function to sort 

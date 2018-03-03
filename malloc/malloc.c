@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "../pointers/src/pointers.h"
+#include "../pointers/pointers.h"
 
 /*
     Duplicates the input string by dynamically allocating memory for 

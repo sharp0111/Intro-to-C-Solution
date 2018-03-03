@@ -1,6 +1,6 @@
-#include <../tests/minunit.h>
-#include <../tests/utils/utils.h>
-#include <stack/stack.h>
+#include "../utils/minunit.h"
+#include "../utils/utils.h"
+#include <stack.h>
 
 char *all_tests()
 {

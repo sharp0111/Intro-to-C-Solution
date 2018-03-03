@@ -2,7 +2,7 @@ SRC=$(wildcard *.c)
 EXE=$(subst .c,,$(SRC))
 
 $(EXE): $(SRC)
-	gcc -Wall -Wextra -g -o $@ $^
+	gcc -Wall -Wextra -I. -g -o $@ $^
 
 test: tests
 
@@ -10,7 +10,7 @@ test: tests
 
 # Sean's testing stuff below:
 
-CFLAGS=-g -O2 -Wall -Wextra -I. -rdynamic -DTESTING -DNDEBUG $(OPTFLAGS)
+CFLAGS=-g -O2 -Wall -Wextra -I. -DTESTING -DNDEBUG $(OPTFLAGS)
 LIBS=-ldl $(OPTLIBS)
 PREFIX?=/usr/local
 

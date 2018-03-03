@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "../../pointers/src/pointers.h" 
+#include "../pointers/pointers.h" 
 
 /*
     Implement the Quicksort algorithm. You'll likely want to re-use the
