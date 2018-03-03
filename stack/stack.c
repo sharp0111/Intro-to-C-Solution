@@ -75,3 +75,10 @@ void Stack_destroy(struct Stack *stack)
     free(stack->storage);
     free(stack);
 }
+
+#ifndef TESTING
+int main(void)
+{
+    return 0;
+}
+#endif

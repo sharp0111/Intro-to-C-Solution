@@ -1,8 +1,6 @@
 #ifndef pointers_h
 #define pointers_h
 
-#include "pointers.c"
-
 void swap(int *a, int *b);
 
 int string_length(char *s);

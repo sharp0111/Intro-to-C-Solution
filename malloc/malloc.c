@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../pointers/pointers.h"
+#include "lib.h"
 
 /*
     Duplicates the input string by dynamically allocating memory for 

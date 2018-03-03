@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /*
     Swaps the integer values being pointed at by a and b. Keep in
     mind when you need to access a pointer's actual value (the 
@@ -88,3 +90,24 @@ int string_compare(char *m, char *n)
     }
     return *m - *n;
 }
+
+#ifndef TESTING
+int main(void)
+{
+    int x = 10, y = 20;
+    swap(&x, &y);
+    printf("x=%d, y=%d\n", x, y);
+
+    char *hello = "Hello";
+    char *world = "World";
+    char buffer[1024];
+
+    string_copy(buffer, hello);
+
+    printf("Buffer is %s\n", buffer);
+    printf("Length is %d\n", string_length(buffer));
+    printf("Comparison is %d\n", string_compare(hello, world));
+
+    return 0;
+}
+#endif
