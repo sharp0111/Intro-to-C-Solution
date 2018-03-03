@@ -1,6 +1,6 @@
 # Dynamic Memory
 
-Remember that a few modules ago when we were talking about arrays that arrays in C entirely static? That's a pretty big limitation since we're forced to know up front what kind of data we want to store in the array and how much data there is before we can fit it into an array. We aren't psychics here. How do we get around this?
+Remember that a few modules ago when we were talking about arrays in C being entirely static? That's a pretty big limitation since we're forced to know up front what kind of data we want to store in the array and how much data there is before we can fit it into an array. We aren't psychics here. How do we get around this?
 
 The answer to that is the `malloc` function. Its signature is this:
 ```c
@@ -8,7 +8,7 @@ The answer to that is the `malloc` function. Its signature is this:
 ```
 A `size_t` type is nothing more than a really large int for representing large sizes. The other thing to note is that the `malloc` function returns a `void` pointer. The `void` type simply means the type could be anything; essentially, we don't know the type up front. So `malloc` returns us a pointer of unspecified type that points to a chunk of memory with the specified size.
 
-Well, if there's this `void` type, what's to stop us from just declaring everything as a `void` type? The drawback to the `void` type is that the compiler then can't infer much about our code. Basically, it won't be able to provide us nearly as many compile-time protections as it can if we have all of our types declared. The moral of the story is that the `void` type should only be used when you actually do not know the type of the data up front. `malloc` returning a `void` pointer is a great use-case for this.
+Well, if there's this `void` type, what's to stop us from just declaring everything as a `void` type? The drawback to the `void` type is that the compiler then can't infer much about our code. It doesn't know the size of a `void` pointer, plus `void` pointers cannot be dereferenced until they are _cast_(their type is changed) to a known type. Basically, it won't be able to provide us nearly as many compile-time protections as it can if we have all of our types declared. The moral of the story is that the `void` type should only be used when you actually do not know the type of the data up front. `malloc` returning a `void` pointer is a great use-case for this.
 
 Here are some pretty typical `malloc` calls:
 ```c
