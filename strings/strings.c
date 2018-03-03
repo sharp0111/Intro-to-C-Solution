@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 /*
     Given a character array s, return the number of characters 
     held inside it.
@@ -31,4 +33,19 @@ char *reverse_string(char s[])
 
     return rv;
 }
+
+#ifndef TESTING
+int main(void)
+{
+    char quote1[] = "Don't forget to be awesome";
+    char quote2[] = "a man a plan a canal panama";
+
+    printf("The string 'Don't forget to be awesome' has %d characters.\n", string_length(quote1));
+    printf("The string 'a man a plan a canal panama' reversed is: %s\n", reverse_string(quote2));
+
+    printf("\n");
+
+    return 0;
+}
+#endif
     
