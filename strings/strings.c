@@ -21,7 +21,8 @@ int string_length(char s[])
     that shortly. In the meantime, write a function that reverses the 
     order of string s and outputs the reversed string to the input 
     array rv. The rv array will have enough space for the reversed 
-    string. Return the rv array.
+    string. Don't forget to terminate the reversed string with a null
+    character. Return the rv array.
 */
 char *reverse_string(char rv[], char s[])
 {
