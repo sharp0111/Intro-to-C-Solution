@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <callbacks.h>
 #include "../malloc/malloc.h"
@@ -41,3 +42,23 @@ int *bubble_sort(int *numbers, int n, compare_cb cmp)
     }
     return target;
 }
+
+#ifndef TESTING
+int main(void)
+{
+    int arr[] = {100, 55, 4, 98, 10, 18, 90, 95, 43, 11, 47, 67, 89, 42, 49, 79};
+    int count = sizeof(arr) / sizeof(arr[0]);
+    int *sorted_arr;
+
+    //sorted_arr = bubble_sort(arr, count, sorted_order);
+    sorted_arr = bubble_sort(arr, count, reverse_order);
+
+    for (int i = 0 ; i < count ; i++) {
+        printf("%d ", sorted_arr[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
+#endif

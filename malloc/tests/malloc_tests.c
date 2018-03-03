@@ -2,7 +2,7 @@
 #include <malloc.h>
 #include "../../utils/minunit.h"
 #include "../../utils/utils.h"
-#include "../../pointers/src/pointers.h"
+#include "../../pointers/pointers.h"
 
 char *test_string_dup()
 {
