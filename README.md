@@ -16,9 +16,9 @@ This lab is structured very much like how your introductory JavaScript labs are 
   - [ ] quicksort
   - [ ] malloc
   - [ ] structs
-  - [ ] stack
   - [ ] callbacks
+  - [ ] [Stretch Goal] hangman
 
 Inside a module directory, type `make tests` (just like with the `npm install` command needing a `package.json` file, the `make` command requires a `Makefile`), which will do a couple of things as specified by the `Makefile`. These include compiling your source code inside that module, linking all of the included header files and libraries, and running the tests for that module. Once you've gotten all of the tests to pass for that module, move on to the next one.
 
-If you want to compile your file into an executable for debugging purposes, or just because, just type `make` to compile the executable. Then type `./NAME_OF_EXECUTABLE` (not in caps) to run it.  
+The code inside the `main` functions are for if you want to compile your file into an executable for debugging purposes. You don't need to edit any of the code in the `main` functions. Just type `make` to compile an executable. Then type `./NAME_OF_EXECUTABLE` (not in caps) to run it, which will execute the code inside that program's `main` function.
